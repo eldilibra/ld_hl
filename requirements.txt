@@ -1,5 +1,6 @@
 Django==1.7.1
-bzr==2.5.0
+--allow-unverified bzr
+bzr==2.5.1
 dj-database-url==0.3.0
 dj-static==0.0.6
 django-toolbelt==0.0.1
