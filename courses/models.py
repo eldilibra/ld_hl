@@ -6,6 +6,7 @@ from django.utils import timezone
 class Course(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=400)
+    image = models.CharField(max_length=200)
     def __unicode__(self):
         return self.name
 
