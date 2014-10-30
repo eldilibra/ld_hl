@@ -1,0 +1,14 @@
+.content {
+  margin: 0 auto;
+  width: 900px;
+}
+
+.course {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.cart-nav:hover {
+  color: #25CF39;
+  cursor: pointer;
+}

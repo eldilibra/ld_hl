@@ -1,3 +1,7 @@
+function goToCart () {
+  window.location.pathname = '/cart';
+}
+
 function addToCart (course) {
   var course_id = $(course).find('.course-id').val();
   $.ajax({
@@ -29,10 +33,11 @@ $(document).ready(function () {
       url: '/courses/'
     }).done(function (courses) {
       courses.forEach(function (c) {
-        var courseDiv = ['<div><img src="', c.fields.image, '" /><h2>',
-        c.fields.name, '</h2><p>', c.fields.description,
+        var courseDiv = ['<div class="course"><img src="', c.fields.image,
+        '" /><h2>', c.fields.name, '</h2><p>', c.fields.description,
         '</p><button onclick="addToCart(this.parentNode)">Add to Cart</button>',
-        '<input class="course-id" type="hidden" value="', c.pk, '" /></div>'].join('');
+        '<input class="course-id" type="hidden" value="', c.pk,
+        '" /></div>'].join('');
         $content.append(courseDiv);
       });
       $.ajax({
@@ -49,6 +54,7 @@ $(document).ready(function () {
   } else if (window.location.pathname.indexOf('/course-detail/') === 0) {
     alert(window.location.pathname);
   } else if (window.location.pathname === '/cart') {
+    $('#cart-nav').remove();
     $content.empty();
     $content.append('<h1>Your cart:</h1>');
     $.ajax({
@@ -56,7 +62,7 @@ $(document).ready(function () {
       url: '/courses/cart'
     }).done(function (courses) {
       courses.forEach(function (c) {
-        var courseDiv = ['<div><img src="', c.fields.image, '" /><h2>',
+        var courseDiv = ['<div class="course"><img src="', c.fields.image, '" /><h2>',
         c.fields.name, '</h2><p>', c.fields.description,
         '</p><input class="course-id" type="hidden" value="', c.pk,
         '" /></div>'].join('');

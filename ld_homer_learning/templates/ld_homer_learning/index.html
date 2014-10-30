@@ -1,11 +1,13 @@
 {% load staticfiles %}
 <html>
   <head>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="{% static 'ld_homer_learning/ld_homer_learning.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'ld_homer_learning/style.css' %}" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="{% static 'ld_homer_learning/ld_homer_learning.js' %}"></script>
   </head>
   <body>
     <h1>Homer Learning</h1>
+    <h3 id="cart-nav" class="cart-nav" onclick="goToCart()">Your Cart</h3>
     <div id="content" class="content">
     </div>
   </body>
